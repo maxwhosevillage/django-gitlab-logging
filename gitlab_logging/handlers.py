@@ -14,7 +14,7 @@ class GitlabIssuesHandler(logging.Handler):
         """
         Open an issue on GitLab with given content
         """
-        from tasks import task_log_gitlab_issue_open
+        from .tasks import task_log_gitlab_issue_open
 
         task_log_gitlab_issue_open.delay(title, content, trace_raw)
 
@@ -23,7 +23,7 @@ class GitlabIssuesHandler(logging.Handler):
         """
         Re-open a given issue on GitLab
         """
-        from tasks import task_log_gitlab_issue_reopen
+        from .tasks import task_log_gitlab_issue_reopen
 
         task_log_gitlab_issue_reopen.delay(issue_id)
 
@@ -34,7 +34,7 @@ class GitlabIssuesHandler(logging.Handler):
         """
         from django.conf import settings
         from django.views.debug import get_exception_reporter_filter
-        from helpers import GitlabIssuesHelper
+        from .helpers import GitlabIssuesHelper
 
         try:
             has_repr, request_repr = True, '\n{0}'.format(
