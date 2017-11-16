@@ -1,5 +1,5 @@
 import hashlib
-from api import Gitlab
+from .api import Gitlab
 from django.conf import settings
 
 
