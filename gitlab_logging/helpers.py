@@ -21,7 +21,7 @@ class GitlabIssuesHelper(object):
         """
         Store new issue in database (avoids from opening it multiple times on GitLab-side)
         """
-        from models import History
+        from .models import History
 
         history, created = History.objects.get_or_create(
             checksum=_class.__trace_checksum(trace),
@@ -43,7 +43,7 @@ class GitlabIssuesHelper(object):
         """
         Check whether the issue is new (not in GitLab database) or not
         """
-        from models import History
+        from .models import History
 
         exists, issue_id = False, None
         checksum = _class.__trace_checksum(trace)
