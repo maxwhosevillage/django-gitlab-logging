@@ -1,4 +1,5 @@
-import hashlib, api
+import hashlib
+from api import Gitlab
 from django.conf import settings
 
 
@@ -61,4 +62,4 @@ class GitlabIssuesHelper(object):
         """
         Return a connector object to the configured GitLab instance
         """
-        return api.Gitlab(settings.GITLAB_HOST, settings.GITLAB_USER, token=settings.GITLAB_TOKEN)
+        return Gitlab(settings.GITLAB_HOST, settings.GITLAB_USER, token=settings.GITLAB_TOKEN)
