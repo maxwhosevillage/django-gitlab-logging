@@ -13,7 +13,7 @@ class GitlabIssuesHelper(object):
         """
         Process the trace checksum
         """
-        return hashlib.sha1(trace).hexdigest()
+        return hashlib.sha1(trace.encode('utf-8')).hexdigest()
 
 
     @classmethod
