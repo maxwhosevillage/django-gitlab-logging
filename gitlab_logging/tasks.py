@@ -1,7 +1,7 @@
 from celery import task
 from django.conf import settings
 
-from helpers import GitlabIssuesHelper
+from .helpers import GitlabIssuesHelper
 
 
 @task
